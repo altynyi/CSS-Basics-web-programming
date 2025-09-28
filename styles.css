@@ -1,0 +1,336 @@
+/* * CSS Requirements: 
+ * 1. External stylesheet only.
+ * 2. Base styles (typography, colors, spacing).
+ * 3. At least one media query (Responsiveness).
+ * 4. Demonstrate box model, selectors, Flexbox/Grid.
+ * 5. Organized with comments.
+ * 6. NEW: Dark Mode support via @media (prefers-color-scheme).
+ */
+
+/* --- 1. Root Variables (Default/Light Mode) --- */
+:root {
+    --primary-color: #2c3e50; /* Dark Navy/Grey for header/footer */
+    --secondary-color: #3499db; /* Bright Blue for links/accents */
+    --accent-color: #e74c3c; /* Red for emphasis/alerts */
+    --background-color: #ecf0f1; /* Light Grey body background */
+    --card-background: #ffffff; /* White card background */
+    --text-color: #333333;
+    --code-color: #c0392b; /* Darker red for code snippets */
+}
+
+/* --- 2. Dark Mode Implementation --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #34495e; /* Darker header/footer */
+        --secondary-color: #5d9cec; /* Brighter blue for contrast */
+        --accent-color: #ff6347; /* Brighter red */
+        --background-color: #1f1f1f; /* Very dark background */
+        --card-background: #2c2c2c; /* Slightly lighter card background */
+        --text-color: #ecf0f1; /* Light text */
+        --code-color: #ffa07a; /* Light salmon for code snippets */
+    }
+    
+    /* Ensure the global background and text colors are used */
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+    
+    /* Dark mode adjustment for the input field in ex11, ex8 */
+    input[type="text"], input[type="password"] {
+        background-color: #444;
+        color: var(--text-color);
+        border-color: #555 !important;
+    }
+}
+
+
+/* --- 3. Base Styles (Apply to all modes) --- */
+* {
+    /* Box Model Demonstration: Border-box */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    /* Uses the dynamically set text and background colors */
+    color: var(--text-color); 
+    background-color: var(--background-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    padding: 8px;
+    background: var(--secondary-color);
+    color: white;
+    z-index: 1000;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.skip-link:focus {
+    left: 10px;
+    /* Keyboard focus visibility */
+    outline: 3px solid var(--accent-color); 
+    outline-offset: 3px;
+}
+
+
+/* --- 4. Header and Navigation Styles (Flexbox Demonstration) --- */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 5%;
+    display: flex; /* Flexbox usage for primary layout */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.6rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--secondary-color);
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Back Link for Exercise Pages */
+.back-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    display: inline-block;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.back-link:hover {
+    color: var(--secondary-color);
+}
+
+/* --- 5. Home Page & Section Styles --- */
+.hero-section {
+    background-color: var(--card-background);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-section h2 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+}
+
+.name-signature {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Exercise Listing on Index (Grid Layout) */
+.exercise-list {
+    list-style: none; /* Removed discs for better grid layout */
+    padding-left: 0;
+    margin-top: 1rem;
+    display: grid; /* Grid Demonstration for listing items */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.exercise-list li {
+    background: var(--card-background);
+    padding: 1rem;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.exercise-list li:hover {
+    transform: translateY(-2px);
+}
+
+.exercise-list li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.exercise-list li a:hover, .exercise-list li a:focus {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    outline: none; /* Focus handled by the link itself */
+}
+
+/* --- 6. Individual Exercise Page Styles (General) --- */
+article {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+pre, aside {
+    background-color: #f4f4f8; /* Needs override for dark mode */
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--text-color); /* Ensure text color respects theme */
+}
+
+/* Adjusting pre/aside background specifically for dark mode */
+@media (prefers-color-scheme: dark) {
+    pre, aside {
+        background-color: #3a3a3a;
+        border-color: #555;
+    }
+}
+
+
+code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: var(--code-color);
+}
+
+.live-demo-area {
+    min-height: 100px;
+    padding: 1.5rem;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 8px;
+    margin-top: 1rem;
+    background-color: var(--background-color);
+}
+
+/* --- 7. Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 5%;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* --- 8. Specific Exercise Styles (Re-used from previous response) --- */
+
+/* Exercise 12: CSS Grid Layout Demonstration */
+.ex12-grid {
+    display: grid; /* Grid Demonstration */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    padding: 10px;
+    background: var(--card-background);
+    border-radius: 4px;
+}
+.ex12-item {
+    background: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Exercise 7: Flexbox Nav Demonstration */
+.ex7-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background-color);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-color);
+}
+.ex7-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.ex7-nav a:hover {
+    background: var(--background-color);
+}
+
+/* --- 9. Media Query (Responsiveness Requirement) --- */
+@media (max-width: 768px) {
+    /* Adjust header for small screens */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 5%;
+    }
+
+    header h1 {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    nav a {
+        display: block;
+    }
+
+    /* Reduce margins/padding on smaller viewports */
+    main {
+        margin: 1rem auto;
+        padding: 0 10px;
+    }
+
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    /* Adjust the CSS Grid layout for challenging ex 12 on mobile */
+    .ex12-grid {
+        grid-template-columns: 1fr; /* Switch to a single column */
+    }
+}
