@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3: CSS Practice Portfolio</title>
+    <!-- Links to the external stylesheet in the css folder -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Load Inter font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility feature: Skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- 1. HEADER (Structural Element) -->
+    <header>
+        <h1>CSS Practice Portfolio</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#beginner-exercises">Beginner</a></li>
+                <li><a href="#intermediate-exercises">Intermediate</a></li>
+                <li><a href="#challenging-exercises">Challenging</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. MAIN CONTENT CONTAINER (Structural Element) -->
+    <main id="main-content">
+        
+        <!-- Hero Section for Introduction -->
+        <section class="hero-section">
+            <header>
+                <h2>Week 3: 15 Essential CSS Concepts</h2>
+            </header>
+            <p>Welcome to the portfolio showcasing various fundamental and advanced CSS techniques, including structure, selectors, the Box Model, Flexbox, Grid, and responsive design.</p>
+            <p class="name-signature">—Altynai</p>
+        </section>
+
+        <!-- 3. BEGINNER EXERCISES -->
+        <section id="beginner-exercises" aria-labelledby="beginner-heading">
+            <h2 id="beginner-heading">Beginner Exercises (1-5)</h2>
+            <ul class="exercise-list">
+                <li><a href="BeginnerEx1.html">Exercise 1: Semantic Structure & Basic Selectors</a></li>
+                <li><a href="BeginnerEx2.html">Exercise 2: The CSS Box Model (Margin, Padding, Border)</a></li>
+                <li><a href="BeginnerEx3.html">Exercise 3: Simple Typography and Color</a></li>
+                <li><a href="BeginnerEx4.html">Exercise 4: Class and ID Selectors</a></li>
+                <li><a href="BeginnerEx5.html">Exercise 5: External Style Sheet Linking</a></li>
+            </ul>
+        </section>
+
+        <!-- 4. INTERMEDIATE EXERCISES -->
+        <section id="intermediate-exercises" aria-labelledby="intermediate-heading">
+            <h2 id="intermediate-heading">Intermediate Exercises (6-10)</h2>
+            <ul class="exercise-list">
+                <li><a href="IntermediateEx6.html">Exercise 6: Basic Float Layout</a></li>
+                <li><a href="IntermediateEx7.html">Exercise 7: Flexbox for Horizontal Alignment</a></li>
+                <li><a href="IntermediateEx8.html">Exercise 8: Pseudo-Classes (:hover, :focus, :nth-child)</a></li>
+                <li><a href="IntermediateEx9.html">Exercise 9: CSS Units (px, em, rem, %)</a></li>
+                <li><a href="IntermediateEx10.html">Exercise 10: Specificity and Inheritance</a></li>
+            </ul>
+        </section>
+
+        <!-- 5. CHALLENGING EXERCISES -->
+        <section id="challenging-exercises" aria-labelledby="challenging-heading">
+            <h2 id="challenging-heading">Challenging Exercises (11-15)</h2>
+            <ul class="exercise-list">
+                <li><a href="ChallengingEx11.html">Exercise 11: Simple Form Styling</a></li>
+                <li><a href="ChallengingEx12.html">Exercise 12: Introduction to CSS Grid Layout</a></li>
+                <li><a href="ChallengingEx13.html">Exercise 13: Z-Index and Stacking Context</a></li>
+                <li><a href="ChallengingEx14.html">Exercise 14: CSS Transitions and Animations</a></li>
+                <li><a href="ChallengingEx15.html">Exercise 15: Introduction to Media Queries (Responsiveness)</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- 6. FOOTER (Structural Element) -->
+    <footer>
+        <p>&copy; 2024 Altynai | Web & Internet Technologies | Week 3</p>
+    </footer>
+</body>
+</html>

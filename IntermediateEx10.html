@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 10: CSS Transform</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+    <style>
+        .ex10-box {
+            width: 150px;
+            height: 150px;
+            background-color: var(--secondary-color);
+            margin: 20px auto;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out; /* Transition applied */
+        }
+        .ex10-box:hover {
+            transform: scale(1.1) rotate(2deg); /* Transform applied on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Intermediate Exercise 10: CSS Transform & Transition</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Apply a slight scale-up and rotation effect when a user hovers over an element, using `transition` for a smooth visual experience.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+.ex10-box {
+    transition: transform 0.3s ease-in-out; /* Enables smooth animation */
+}
+.ex10-box:hover {
+    transform: scale(1.1) rotate(2deg); /* Scales up and rotates slightly */
+}
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <div class="ex10-box">
+                    Hover Me!
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Intermediate Exercise 10</p>
+    </footer>
+</body>
+</html>

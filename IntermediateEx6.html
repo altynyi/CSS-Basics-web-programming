@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6: Factorial Recursion</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Intermediate Exercise 6: Factorial Recursion</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Calculate the factorial of a number ($n!$) using a recursive JavaScript function. We will calculate $5!$.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+function factorial(n) {
+    // Base case: 0! is 1
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    // Recursive step: n * factorial(n - 1)
+    return n * factorial(n - 1);
+}
+
+// Calculate 5!
+const result = factorial(5); // Should be 120
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <p>The factorial of 5 ($5!$) is: <strong id="ex6-result"></strong></p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Intermediate Exercise 6</p>
+    </footer>
+    <script>
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+        document.getElementById('ex6-result').textContent = factorial(5);
+    </script>
+</body>
+</html>

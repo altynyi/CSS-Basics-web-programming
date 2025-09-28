@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11: Debounce Function</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Challenging Exercise 11: Debounce Function Implementation</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Implement a `debounce` function to limit the rate at which a function (like a search handler) is called. The function should only execute after a specified delay following the last event call.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId); // Clear previous timeout
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+
+// Example usage:
+const handleExpensiveInput = debounce((value) => {
+    console.log("Processing search for:", value);
+    // ... expensive API call here
+}, 500);
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <label for="ex11-input">Type quickly here (check console):</label>
+                <input type="text" id="ex11-input" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; display: block; margin-top: 5px;">
+                <p style="margin-top: 10px; font-size: 0.9em;">(Open your browser's console to see the debounced output every 500ms after you stop typing.)</p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Challenging Exercise 11</p>
+    </footer>
+    <script>
+        function debounce(func, delay) {
+            let timeoutId;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(context, args);
+                }, delay);
+            };
+        }
+
+        const handleInput = (value) => {
+            console.log("Debounced search for:", value);
+        };
+
+        const debouncedInputHandler = debounce(handleInput, 500);
+
+        document.getElementById('ex11-input').addEventListener('input', (e) => {
+            debouncedInputHandler(e.target.value);
+        });
+    </script>
+</body>
+</html>

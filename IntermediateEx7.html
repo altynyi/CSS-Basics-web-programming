@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7: Flexbox Navigation</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Intermediate Exercise 7: Flexbox Navigation Layout</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Create a responsive, evenly spaced navigation bar using CSS Flexbox properties like `display: flex;` and `justify-content: space-between;`.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+/* In css/styles.css: */
+.ex7-nav {
+    display: flex;
+    justify-content: space-between; /* Spreads items out */
+    align-items: center;
+}
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <nav class="ex7-nav" aria-label="Demo Navigation">
+                    <a href="#">Link One</a>
+                    <a href="#">Link Two</a>
+                    <a href="#">Link Three</a>
+                    <a href="#">Link Four</a>
+                </nav>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Intermediate Exercise 7</p>
+    </footer>
+</body>
+</html>

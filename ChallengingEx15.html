@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 15: JS Class Implementation</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Challenging Exercise 15: JavaScript Class Implementation</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Create a modern JavaScript class named `Vehicle` with a constructor to set properties and a method to describe itself, demonstrating object-oriented concepts.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+class Vehicle {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    describe() {
+        return `This is a ${this.year} ${this.make} ${this.model}.`;
+    }
+}
+
+const myCar = new Vehicle("Toyota", "Prius", 2020);
+const description = myCar.describe();
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <p>Vehicle Object Description:</p>
+                <p>Car details: <strong id="ex15-result"></strong></p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Challenging Exercise 15</p>
+    </footer>
+    <script>
+        class Vehicle {
+            constructor(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            describe() {
+                return `This is a ${this.year} ${this.make} ${this.model}.`;
+            }
+        }
+
+        const myCar = new Vehicle("Toyota", "Prius", 2020);
+        document.getElementById('ex15-result').textContent = myCar.describe();
+    </script>
+</body>
+</html>

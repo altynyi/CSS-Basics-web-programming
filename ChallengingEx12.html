@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12: Responsive CSS Grid</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Challenging Exercise 12: Responsive CSS Grid Layout</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Use CSS Grid to create a responsive dashboard that displays four items in a $2\times2$ grid on desktop, a single row of 4 columns on tablet, and a single column on mobile. (The global CSS only shows the mobile to 3-column switch for simplicity).</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+/* In css/styles.css: */
+.ex12-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default 3 columns (desktop) */
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .ex12-grid {
+        grid-template-columns: 1fr; /* Switch to 1 column on mobile */
+    }
+}
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <p>Resize the window to see the layout switch from a grid to a single column.</p>
+                <div class="ex12-grid">
+                    <div class="ex12-item">Card 1: Report</div>
+                    <div class="ex12-item">Card 2: Stats</div>
+                    <div class="ex12-item">Card 3: Chart</div>
+                    <div class="ex12-item">Card 4: News</div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Challenging Exercise 12</p>
+    </footer>
+</body>
+</html>

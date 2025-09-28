@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: JS Addition Function</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Beginner Exercise 3: JS Addition Function</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Write a basic JavaScript function to add two numbers and display the result.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+function add(a, b) {
+    return a + b;
+}
+
+const result = add(5, 12); // result is 17
+
+document.getElementById('result').textContent = result;
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <p>The sum of 5 and 12 is: <strong id="ex3-result"></strong></p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Beginner Exercise 3</p>
+    </footer>
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        const sum = add(5, 12);
+        document.getElementById('ex3-result').textContent = sum;
+    </script>
+</body>
+</html>

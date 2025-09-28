@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9: Array Filtering</title>
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <a href="index.html" class="back-link">&larr; Back to Portfolio Home</a>
+        </nav>
+        <h1>Intermediate Exercise 9: JavaScript Array Filtering</h1>
+    </header>
+    <main id="main-content">
+        <article>
+            <h2>Description</h2>
+            <p><strong>Exercise:</strong> Use the built-in JavaScript `filter()` method to efficiently extract only the even numbers from a given array.</p>
+
+            <h2>Solution Code Snippet</h2>
+            <pre><code>
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+// evenNumbers result: [2, 4, 6, 8, 10]
+            </code></pre>
+
+            <h2>Live Result Demonstration</h2>
+            <div class="live-demo-area">
+                <p>Original Array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+                <p>Filtered Even Numbers: <strong id="ex9-result"></strong></p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Altynai | Solution for Intermediate Exercise 9</p>
+    </footer>
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const evenNumbers = numbers.filter(num => num % 2 === 0);
+        document.getElementById('ex9-result').textContent = '[' + evenNumbers.join(', ') + ']';
+    </script>
+</body>
+</html>
